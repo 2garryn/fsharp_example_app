@@ -14,17 +14,8 @@ type RangeLow = RangeLow of Amount option
 
 type RangeHigh = RangeHigh of Amount option
 
-type AccRules = 
-    | Any 
-    | NonNeg 
-    | NonPos 
-    | Neg
-    | Pos 
-    | Range of RangeLow * RangeHigh
 
 type AccUpd = 
-    | DebitOnly
-    | CreditOnly
     | DebitAndCredit
     | Ignore 
 
@@ -44,9 +35,8 @@ type TranCreation = {
 }
 
 type AccCreation = {
-    Balance: Amount;
+    Currency: Currency;
     Label: AccLabel;
-    Rules: AccRules;
     Upd: AccUpd
 }
 
@@ -54,7 +44,6 @@ type Acc = {
     Id: AccId;
     Balance: Amount;
     Label: AccLabel;
-    Rules: AccRules;
     Upd: AccUpd
 }
 
@@ -67,7 +56,4 @@ type Tran = {
     SearchTags: Map<string, string>;
     Metadata: Map<string, MetadataValue>
 }
-
-type Err = 
-    | AccountNotFound
 

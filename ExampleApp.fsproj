@@ -2,15 +2,16 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="Libs/MyMoney/MyMoney.fs" />
-    <Compile Include="Program.fs" />
     <Compile Include="Services/Bank/Types.fs" />
     <Compile Include="Services/Bank/Errors.fs" />
+    <Compile Include="Services/Bank/Database.fs" />
     <Compile Include="Services/Bank/Service.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

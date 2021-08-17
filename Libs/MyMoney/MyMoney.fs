@@ -1,4 +1,3 @@
-
 module Libs.MyMoney
 
 open System
@@ -58,4 +57,6 @@ type Amount =
         match Decimal.TryParse(s) with
         | true, v -> Ok {Am = v; Cur = c}
         | false, _ -> Error <| InvalidAmount s
+
+    static member Zero cur = {Am = 0M; Cur = cur}
 
